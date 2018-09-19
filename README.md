@@ -1,10 +1,15 @@
 # [Beyond carbon and nitrogen: guidelines for estimating three‐dimensional isotopic niche space](https://onlinelibrary.wiley.com/doi/abs/10.1002/ece3.2013)
 
+Sam Rossman, Peggy Ostrom, Forrest Gordon, and Elise Zipkin
+
+Ecology and Evolution
+
+Please contact the first author for questions about the code or data: Sam Rossman (rossman.sam@gmail.com)
 ______________________________________________________________________________________________________________________________________
 ## Abstract
 Isotopic niche has typically been characterized through carbon and nitrogen ratios and most modeling approaches are limited to two dimensions. Yet, other stable isotopes can provide additional power to resolve questions associated with foraging, migration, dispersal and variations in resource use. The ellipse niche model was recently generalized to n‐dimensions. We present an analogous methodology which incorporates variation across three stable dimensions to estimate the significant features of a population's isotopic niche space including: 1) niche volume (referred to as standard ellipsoid volume, SEV), 2) relative centroid location (CL), 3) shape and 4) area of overlap between multiple ellipsoids and 5) distance between two CLs. We conducted a simulation study showing the accuracy and precision of three dimensional niche models across a range of values. Importantly, the model correctly identifies differences in SEV and CL among populations, even with small sample sizes and in cases where the absolute values cannot precisely be recovered. We use these results to provide guidelines for sample size in conducting multivariate isotopic niche modeling. We demonstrate the utility of our approach with a case study of three bottlenose dolphin populations which appear to possess largely overlapping niches when analyzed with only carbon and nitrogen isotopes. Upon inclusion of sulfur, we see that the three dolphin ecotypes are in fact segregated on the basis of salinity and find the stable isotope niche of inshore bottlenose dolphins significantly larger than coastal and offshore populations.
 
-## Data
-
-
 ## Code
+[simulation.R](https://github.com/zipkinlab/Rossman_etal_2016_EcolAndEvol/blob/master/simulation.R) – This file contains the code to simulate tri-variate data for four populations using known “true” SEV values and centroid locations. The code will first write the JAGS model to the working directory then run data through the model. Metrics such as SEV, centroid location, percent overlap, and statistical test between SEV and centroid location are calculated in the code following the JAGS run.
+
+[dolphin_example_wrapper.R](https://github.com/zipkinlab/Rossman_etal_2016_EcolAndEvol/blob/master/dolphin_example_wrapper.R) – This file contains the code to run the case study quantifying the isotopic niche of three Florida dolphin stocks. Code contains the following parts: 1.) libraries and shortcut functions, 2.) code to write and sink the JAGS Model, 3.) data, data processing and code to run JAGS, 4.) Results post processing to calculate SEV, centroid location and statistical tests and 5.) Graphing results. 
